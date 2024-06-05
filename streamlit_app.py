@@ -1,5 +1,5 @@
 import streamlit as st
-import google.generativeai as genai as genai
+import google.generativeai as genai
 
 # Streamlitのタイトルと説明
 st.title("💬 Chatbot")
