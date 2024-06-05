@@ -1,11 +1,13 @@
 import streamlit as st
 import google.generativeai as genai
 
+
 # Streamlitのタイトルと説明
 st.title("💬 Chatbot")
 st.caption("🚀 A streamlit chatbot powered by Google AI")
 
 # Google Generative AI（Gemini API）のAPIキー設定
+API_KEY=os.environ.get("TEST_API_KEY")
 genai.configure(api_key=AIzaSyAM7SaC3rk3rhUROBtkuD7aA8Mq46oXho4)
 
 # Geminiモデルの設定
