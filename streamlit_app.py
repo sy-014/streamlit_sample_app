@@ -5,9 +5,6 @@ import google.generativeai as genai
 st.title("💬 Chatbot")
 st.caption("🚀 A streamlit chatbot powered by Google AI")
 
-# GOOGLE_API_KEYを使用して環境変数を取得します。
-GOOGLE_API_KEY=userdata.get('GOOGLE_API_KEY')
-
 # Google Generative AI（Gemini API）のAPIキー設定
 genai.configure(api_key=AIzaSyAM7SaC3rk3rhUROBtkuD7aA8Mq46oXho4)
 
