@@ -33,3 +33,7 @@ if prompt:
 
 # 応答をテキストとして取得（ここではresponse.textと仮定）
     assistant_response = response.text
+
+## 質問するボタンがクリックされた場合
+if submit:
+    response=get_gemini_response(input)
