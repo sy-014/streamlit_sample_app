@@ -15,25 +15,28 @@ genai.configure(api_key=API_KEY)
 # Geminiモデルの設定
 model = genai.GenerativeModel('gemini-pro')
 
-# チャット履歴を初期化する
+# セッション状態にメッセージリストがない場合は初期化
 if "messages" not in st.session_state:
-	# 辞書形式で定義
-    st.session_state["messages"] = []
-	# 属性として定義
-    # st.session_state.messages = []
+    st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
 
-# ユーザーの入力が送信された際に実行される処理
-if prompt := st.chat_input("What is up?"):
+# 既存のメッセージを表示
+for msg in st.session_state.messages:
+    # ここではシンプルなテキスト表示を使用
+    st.text(f"{msg['role']}: {msg['content']}")
 
-    # ユーザの入力を表示する
-    with st.chat_message("user"):
-        st.markdown(prompt)
-    # ユーザの入力をチャット履歴に追加する
+# ユーザー入力の取得
+prompt = st.text_input("Your message:")
+
+if prompt:
+    # ユーザー入力をセッション状態に追加
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    response = f"Echo: {prompt}"
-    # ChatBotの返答を表示する
-    with st.chat_message("assistant"):
-        st.markdown(response)
-    # ChatBotの返答をチャット履歴に追加する
-    st.session_state.messages.append({"role": "assistant", "content": response})
+    # Gemini APIを使って応答を生成
+    response = model.generate_content(prompt)
+
+    # 応答をテキストとして取得（ここではresponse.textと仮定）
+    assistant_response = response.text
+
+    # 応答をセッション状態に追加し、表示
+    st.session_state.messages.append({"role": "assistant", "content": assistant_response})
+    st.text(f"Assistant: {assistant_response}")
