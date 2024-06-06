@@ -43,3 +43,11 @@ def get_gemini_response(promt):
     # 応答をセッション状態に追加し、表示
     st.session_state.messages.append({"role": "assistant", "content": assistant_response})
     st.text(f"Assistant: {assistant_response}")
+
+
+messages = [
+  {"role":"system", "content": "Assistant is a large language model trained by OpenAI."},
+  {"role":"user", "content":"本初子午線はいくつ？"}
+  {"role":"assistant", "content":「本初子午線」とは、経度の基準となる子午線のことで、国際的にはグリニッジ子午線が本初子午線として採用されています。本初子午線の経度は0度です。これを基準に、東経と西経が決定され、経度180度の線が国際日付変更線となります。本初子午線は、イギリスのロンドン近郊のグリニッジ天文台を通っており、世界の時計（時刻）の標準である協定世界時（UTC）の基準ともなっています。}
+  {"role":"user", "content":user_input}
+]
