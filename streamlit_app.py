@@ -32,9 +32,9 @@ if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
 
 ## OpenAIモデルをロードし、応答を取得する関数
-def get_gemini_response(promt):
+def get_gemini_response(prompt):
     model = genai.GenerativeModel('gemini-pro')
-    response = model.generate_content(promt)
+    response = model.generate_content(prompt)
     return response.text
 
     # 応答をテキストとして取得（ここではresponse.textと仮定）
