@@ -29,5 +29,4 @@ if prompt:
     # ユーザー入力をセッション状態に追加
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    # 応答をテキストとして取得（ここではresponse.textと仮定）
-    assistant_response = response.text
+    
