@@ -31,8 +31,11 @@ if prompt:
     # ユーザー入力をセッション状態に追加
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    # Gemini APIを使って応答を生成
-    response = model.generate_content(prompt)
+## OpenAIモデルをロードし、応答を取得する関数
+def get_gemini_response(question):
+    model = genai.GenerativeModel('gemini-pro')
+    response = model.generate_content(question)
+    return response.text
 
     # 応答をテキストとして取得（ここではresponse.textと仮定）
     assistant_response = response.text
