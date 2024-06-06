@@ -22,11 +22,6 @@ if "messages" not in st.session_state:
 	# 属性として定義
     # st.session_state.messages = []
 
-# これまでのチャット履歴を全て表示する
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-
 # ユーザーの入力が送信された際に実行される処理
 if prompt := st.chat_input("What is up?"):
 
