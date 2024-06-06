@@ -29,5 +29,5 @@ if prompt:
     # ユーザー入力をセッション状態に追加
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-    # Gemini APIを使って応答を生成
-    response = f"Echo:(prompt)"
+    # 応答をテキストとして取得（ここではresponse.textと仮定）
+    assistant_response = response.text
