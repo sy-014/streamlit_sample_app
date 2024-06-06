@@ -1,7 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
 import os
-import markdown
 
 # Streamlitのタイトルと説明
 st.title("💬 Chatbot")
@@ -30,5 +29,7 @@ if prompt:
     # ユーザー入力をセッション状態に追加
     st.session_state.messages.append({"role": "user", "content": prompt})
 
-response = model.generate_content("明日の天気はなんですか？")
-to_markdown(response.text)
+    response = model.generate_content("明日の天気はなんですか？")
+
+# 応答をテキストとして取得（ここではresponse.textと仮定）
+    assistant_response = response.text
