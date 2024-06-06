@@ -24,3 +24,7 @@ for msg in st.session_state.messages:
 
 # ユーザー入力の取得
 prompt = st.text_input("Your message:")
+
+if prompt:
+    # ユーザー入力をセッション状態に追加
+    st.session_state.messages.append({"role": "user", "content": prompt})
