@@ -32,7 +32,10 @@ if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Gemini APIを使って応答を生成
+    def get_gemini_response(prompt):
+    model = genai.GenerativeModel('gemini-pro')
     response = model.generate_content(prompt)
+    return response.text
 
     # 応答をテキストとして取得（ここではresponse.textと仮定）
     assistant_response = response.text
