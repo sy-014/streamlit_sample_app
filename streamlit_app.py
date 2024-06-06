@@ -30,4 +30,4 @@ if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Gemini APIを使って応答を生成
-    response = model.generate_content(prompt)
+    response = f"Echo:(prompt)"
