@@ -1,12 +1,14 @@
 import streamlit as st
 import google.generativeai as genai
+import os
 
 # Streamlitのタイトルと説明
 st.title("💬 Chatbot")
 st.caption("🚀 A streamlit chatbot powered by Google AI")
 
 # Google Generative AI（Gemini API）のAPIキー設定
-genai.configure(api_key=AIzaSyANZBQ4CACOWmFc8d20UXzbcBwRBlZA3pU)
+API_KEY=os.environ.get("TEST_API_KEY")
+genai.configure(api_key=API_KEY)
 
 # Geminiモデルの設定
 model = genai.GenerativeModel('gemini-pro')
@@ -28,7 +30,10 @@ if prompt:
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     # Gemini APIを使って応答を生成
+    def get_gemini_response(prompt):
+    model = genai.GenerativeModel('gemini-pro')
     response = model.generate_content(prompt)
+    return response.text
 
     # 応答をテキストとして取得（ここではresponse.textと仮定）
     assistant_response = response.text
