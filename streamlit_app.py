@@ -17,6 +17,9 @@ model = genai.GenerativeModel('gemini-pro')
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Assistant", "content": "How can I help you?"}]
 
+# ユーザー入力の取得
+prompt = st.text_input("Your message:")
+
 # 既存のメッセージを表示
 for msg in st.session_state.messages:
     # ここではシンプルなテキスト表示を使用
@@ -25,7 +28,3 @@ msg = {
     'role': 'Assistant',
     'content': 'Iam a large language model,trained by Google.'
 }
-# ユーザー入力の取得
-prompt = st.text_input("Your message:")
-
-
