@@ -12,7 +12,7 @@ dotenv.load_dotenv()
 
 def configure_api():
 # Google Generative AI（Gemini API）のAPIキー設定
-API_KEY=os.getenv("TEST_API_KEY")
+API_KEY = os.getenv("TEST_API_KEY")
 genai.configure(api_key=API_KEY)
 
 # Geminiモデルの設定
