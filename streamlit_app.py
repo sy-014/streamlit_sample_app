@@ -38,4 +38,3 @@ if prompt:
     # 応答をセッション状態に追加し、表示
     st.session_state.messages.append({"role": "assistant", "content": assistant_response})
     st.text(f"Assistant: {assistant_response}")
-
