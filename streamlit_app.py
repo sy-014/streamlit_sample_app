@@ -25,4 +25,4 @@ for msg in st.session_state.messages:
 # ユーザー入力の取得
 prompt = st.text_input("Your message:")
 
-st.radio("好きなマイケルは？", ('ジャクソン', 'ジョーダン', 'ホフマン'))
+st.balloons()
