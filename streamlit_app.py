@@ -6,6 +6,9 @@ import os
 st.title("💬 Chatbot")
 st.caption("🚀 A streamlit chatbot powered by Google AI")
 
+# .envファイルから環境変数を読み込む
+dotenv.load_dotenv()
+
 # Google Generative AI（Gemini API）のAPIキー設定
 API_KEY=os.environ.get("TEST_API_KEY")
 genai.configure(api_key=API_KEY)
