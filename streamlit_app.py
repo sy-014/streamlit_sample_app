@@ -18,15 +18,13 @@ if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "Assistant", "content": "How can I help you?"}]
 
 # 既存のメッセージを表示
+for msg in st.session_state.messages:
+    # ここではシンプルなテキスト表示を使用
+    st.text(f"{msg['role']}: {msg['content']}")
 msg = {
     'role': 'Assistant',
     'content': 'Iam a large language model,trained by Google.'
 }
-
-for msg in st.session_state.messages:
-    # ここではシンプルなテキスト表示を使用
-    st.text(f"{msg['role']}: {msg['content']}")
-
 # ユーザー入力の取得
 prompt = st.text_input("Your message:")
 
