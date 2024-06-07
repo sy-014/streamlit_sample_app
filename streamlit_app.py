@@ -22,5 +22,6 @@ for msg in st.session_state.messages:
     # ここではシンプルなテキスト表示を使用
     st.text(f"{msg['role']}: {msg['content']}")
 
-
+# ユーザー入力の取得
+prompt = st.text_input("Your message:")
 
