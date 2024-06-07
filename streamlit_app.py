@@ -10,7 +10,7 @@ st.caption("🚀 A streamlit chatbot powered by Google AI")
 dotenv.load_dotenv()
 
 # Google Generative AI（Gemini API）のAPIキー設定
-API_KEY=os.environ.get("TEST_API_KEY")
+API_KEY=os.getenv("TEST_API_KEY")
 genai.configure(api_key=API_KEY)
 
 # Geminiモデルの設定
