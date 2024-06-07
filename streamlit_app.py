@@ -1,14 +1,11 @@
 import streamlit as st
 import google.generativeai as genai
 import os
-import dotenv
+
 
 # Streamlitのタイトルと説明
 st.title("💬 Chatbot")
 st.caption("🚀 A streamlit chatbot powered by Google AI")
-
-# .envファイルから環境変数を読み込む
-dotenv.load_dotenv()
 
 # Google Generative AI（Gemini API）のAPIキー設定
 API_KEY = os.getenv("TEST_API_KEY")
