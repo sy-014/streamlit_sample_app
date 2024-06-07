@@ -1,6 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 import os
+import dotenv
 
 # Streamlitのタイトルと説明
 st.title("💬 Chatbot")
